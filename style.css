@@ -1,0 +1,89 @@
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e6e9f1;
+}
+.container{
+    padding: 2rem 7rem;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.result_image{
+    display: flex;
+    column-gap: 7rem;
+}
+.container.start .user_result img {
+    transform-origin: unset;
+    animation: userShake 0.7s ease infinite;
+}
+@keyframes userShake {
+    50%{
+        transform: rotate(10deg);
+    }
+    
+}
+.container.start .cpu_result img{
+transform-origin: unset;
+    animation: cpuShake 0.7s ease infinite;
+}
+@keyframes cpuShake {
+    50%{
+        transform: rotate(-10deg);
+    }
+    
+}
+.result_image img{
+    width: 100px;
+}
+.user_result img{
+    transform: rotate(360deg) ;
+}
+.cpu_result img{
+    transform: rotate(-360deg) rotateY(180deg);
+}
+.result{
+    text-align: center;
+    font-size: 2rem;
+    color: #7d2f7d;
+    margin-top: 1.5rem;
+}
+.opt_img img{
+    width: 50px;
+}
+.options{
+    display: flex;
+    align-items: center;
+    margin-top: 2.5rem;
+    justify-content: space-between;
+}
+
+.container.start.options{
+  pointer-events: none;
+}
+
+.opt_img{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.6;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+.opt_img:hover{
+    opacity: 1;
+}
+.opt_img.active{
+    opacity: 1;
+}
+.opt_img img{
+    pointer-events: none;
+}
+.options p{
+    color: #7d2f7d;
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    pointer-events: none;
+}
